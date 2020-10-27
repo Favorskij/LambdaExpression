@@ -1,65 +1,31 @@
 package com.lambdaexpression;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
-
 public class Main {
 
     public static void main(String[] args) {
 
-        Student student1 = new Student(36, "abdul");
-        Student student2 = new Student(35, "abcd");
-        Student student3 = new Student(34, "b");
-        Student student4 = new Student(22, "c");
-        Student student5 = new Student(32, null);
+        SumImpl sum1 = Integer::sum;
+        System.out.println(sum1.sum(1,2));
 
-        List<Student> students1  = new ArrayList<>();
-        students1.add(student1);
-        students1.add(student2);
-        students1.add(student3);
-        students1.add(student4);
-        students1.add(student5);
+        SumImpl sum2 = (a, b) -> a + b;
+        System.out.println(sum2.sum(2,3));
 
+        SumImpl sum3 = (a, b) -> {
+            return a + b;
+        };
+        System.out.println(sum3.sum(3,4));
 
-        final List<Student> students2 = new ArrayList<Student>(){{
-            add(new Student(36, "abdul"));
-            add(new Student(35, "abcd"));
-            add(new Student(34, "b"));
-            add(new Student(22, "c"));
-            add(new Student(32, null));
-        }};
+        Sqrt sqrt1 = x -> x + 2;
+        System.out.println(sqrt1.sqrt(5));
 
-        long count = students2
-                .stream()
-                .filter(student -> student.age > 30)
-                .map(student -> student.name)
-                .filter(name -> name == null || name.length() <= 4).count();
+        Sqrt sqrt2 = x -> Math.sqrt(x);
+        System.out.println(sqrt2.sqrt(6));
 
 
-        System.out.println(count);
+        Sqrt sqrt3 = Math::sqrt;
+        System.out.println(sqrt3.sqrt(7));
 
-//        List<String> count = students1
-//                .stream()
-//                .filter(student -> student.age > 30)
-//                .map(student -> student.name)
-//                .filter(name -> name == null || name.length() <= 4).collect(Collectors.toList());
-//
-//        System.out.println(count.size());
-//
-//        System.out.println(count);
-
-
-
-//        int counter = 0;
-//        for (Student student : students1) {
-//
-//            if (student.age > 30 && (student.name == null || student.name.length() <= 4)){
-//                counter++;
-//            }
-//
-//        }
-//        System.out.println(counter);
     }
+
 
 }
