@@ -25,6 +25,11 @@ public class Main {
         Sqrt sqrt3 = Math::sqrt;
         System.out.println(sqrt3.sqrt(7));
 
+        Printer printer1 = x -> System.out.println(x);
+        printer1.sqrt(8);
+
+        Printer printer2 = System.out::println;
+        printer2.sqrt(8);
     }
 
 
