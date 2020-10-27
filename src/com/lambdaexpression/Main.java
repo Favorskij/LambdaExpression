@@ -1,10 +1,5 @@
 package com.lambdaexpression;
 
-// 1 - https://www.youtube.com/watch?v=Wc4CIUlfpWg
-// 2 - https://www.youtube.com/watch?v=glVHgOtHtSk
-// 3 - https://www.youtube.com/watch?v=SS2wP0ALxZE
-// 4 - https://www.youtube.com/watch?v=jkqo8Nwqouc
-
 public class Main {
 
     public static void main(String[] args) {
